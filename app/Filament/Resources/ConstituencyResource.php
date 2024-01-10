@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ConstituencyResource\Pages;
 use App\Filament\Resources\ConstituencyResource\RelationManagers;
 use App\Models\Constituency;
+use App\Models\County;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -32,6 +33,8 @@ class ConstituencyResource extends Resource
                     ->relationship('county', 'county')
                     ->searchable()
                     ->preload()
+                    ->createOptionForm(County::getForm())
+                    ->editOptionForm(County::getForm())
                     ->required(),
             ]);
     }
