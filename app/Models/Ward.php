@@ -14,4 +14,7 @@ class Ward extends Model
 
     protected $guarded =[];
 
+    public function constituency(): BelongsTo {
+        return $this->belongsTo(Constituency::class);
+    }
 }
