@@ -25,18 +25,7 @@ class ConstituencyResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                Forms\Components\TextInput::make('constituency')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Select::make('county_id')
-                    ->relationship('county', 'county')
-                    ->searchable()
-                    ->preload()
-                    ->createOptionForm(County::getForm())
-                    ->editOptionForm(County::getForm())
-                    ->required(),
-            ]);
+            ->schema(Constituency::getForm());
     }
 
     public static function table(Table $table): Table
