@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('counties', function (Blueprint $table) {
             $table->id();
             $table->string('county');
-            $table->string('county_code');
+            $table->string('county_code')->unique();
             $table->softDeletes();
             $table->timestamps();
         });
