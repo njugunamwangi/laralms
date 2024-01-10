@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class County extends Model
@@ -12,4 +13,8 @@ class County extends Model
     use SoftDeletes;
 
     protected $guarded =[];
+
+    public function constituencies(): HasMany {
+        return $this->hasMany(Constituency::class);
+    }
 }
