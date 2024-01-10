@@ -17,4 +17,8 @@ class Ward extends Model
     public function constituency(): BelongsTo {
         return $this->belongsTo(Constituency::class);
     }
+
+    public function county(): BelongsTo {
+        return $this->belongsTo(County::class);
+    }
 }

@@ -29,4 +29,8 @@ class County extends Model
     public function constituencies(): HasMany {
         return $this->hasMany(Constituency::class);
     }
+
+    public function wards(): HasMany {
+        return $this->hasMany(Ward::class);
+    }
 }
