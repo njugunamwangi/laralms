@@ -4,6 +4,8 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\WardResource\Pages;
 use App\Filament\Resources\WardResource\RelationManagers;
+use App\Models\Constituency;
+use App\Models\County;
 use App\Models\Ward;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -35,6 +37,8 @@ class WardResource extends Resource
                     ->searchable()
                     ->preload()
                     ->live()
+                    ->createOptionForm(County::getForm())
+                    ->editOptionForm(County::getForm())
                     ->required(),
                 Forms\Components\Select::make('constituency_id')
                     ->relationship('constituency', 'constituency', modifyQueryUsing: function(Builder $query, Get $get) {
@@ -42,6 +46,8 @@ class WardResource extends Resource
                     })
                     ->searchable()
                     ->preload()
+                    ->createOptionForm(Constituency::getForm())
+                    ->editOptionForm(Constituency::getForm())
                     ->required(),
             ]);
     }
