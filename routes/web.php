@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Register;
 use App\Livewire\RegisterSchool;
 use App\Livewire\RegisterTutor;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome');
 
 // Register
+Route::get('/register', Register::class)->name('register');
 Route::get('/register/school', RegisterSchool::class)->name('register-school');
 Route::get('/register/tutor', RegisterTutor::class)->name('register-tutor');
 

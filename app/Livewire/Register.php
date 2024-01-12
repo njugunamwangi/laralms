@@ -10,7 +10,7 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Livewire\Component;
 
-class RegisterSchool extends Component implements HasForms, HasActions
+class Register extends Component implements HasForms, HasActions
 {
     use InteractsWithActions;
     use InteractsWithForms;
@@ -26,6 +26,6 @@ class RegisterSchool extends Component implements HasForms, HasActions
 
     public function render()
     {
-        return view('livewire.register-school');
+        return view('livewire.register');
     }
 }
